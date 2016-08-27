@@ -1,24 +1,13 @@
-<html>
-    <head>
-        <title>Amanda's Cool Blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href=''>Amanda's Cool Blog</a></h1>
-            <h2>The blog for the coolest kids on the World Wide Web</h2>
-            <p>Welcome to <em>Amanda's</em> <strong>Cool</strong> Blog! 
-            The thoughts contained within are really deep and profound; 
-            you should consider yourself lucky thatyou get to read them.</p>
-        </div>
+{% extends 'blog/base.html' %}
 
-        {% for post in posts %}
-            <div>
-                <hr />
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
                 <p>published: {{ post.published_date }}</p>
-                <h1><a href="">{{ post.title }}</a></h1>
-                <p>{{ post.text|linebreaksbr }}</p>
             </div>
-        {% endfor %}
-
-    </body>
-</html>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% load staticfiles %}
+
+<html>
+    <head>
+        <title>Amanda's Cool Blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href=''>Amanda's Cool Blog</a></h1>
+            <h2>The blog for the coolest kids on the World Wide Web</h2>
+            <p>Welcome to Amanda's Cool Blog! 
+            The thoughts contained within are really deep and profound; 
+            you should consider yourself lucky that you get to read them.</p>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
